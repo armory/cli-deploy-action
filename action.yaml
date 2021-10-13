@@ -1,0 +1,35 @@
+name: 'armory/cli-deploy-action'
+description: 'Leverage the armory cli to deploy your apps'
+inputs:
+  path-to-file:
+    description: 'Path to the configuration YAML file used to configure your deployment'
+    required: true
+  clientId:
+    description: 'ClientId for Armory Cloud'
+    required: true
+  clientSecret:
+    description: 'ClientSecret for Armory Cloud'
+    required: true
+  audience:
+    description: 'Intended audience of requests that will use your Armory Cloud authentication token. Is deployHostUrl by default'
+    default: 'https://api.cloud.armory.io'
+  tokenIssuerUrl:
+    description: 'Armory Cloud authentication provider url'
+    default: 'https://auth.cloud.armory.io/oauth/token'
+  deployHostUrl:
+    description: 'Location of the Armory Cloud API which will handle your deployment'
+    default: 'api.cloud.armory.io'
+outputs:
+  deployment-link:
+    description: 'HTTP link and deployment id used to see the status of your deployment'
+runs:
+  using: 'docker'
+  image: 'docker://armory/armory-cli:0.4.6'
+  env:
+    ARMORY_CLIENTID: ${{ inputs.clientId }}
+    ARMORY_CLIENTSECRET: ${{ inputs.clientSecret }}
+    ARMORY_AUDIENCE: ${{ inputs.audience }}
+    ARMORY_TOKENISSUERURL: ${{ inputs.tokenIssuerUrl }}
+    ARMORY_DEPLOYHOSTURL: ${{ inputs.deployHostUrl }}
+  args:
+    - "deploy start --file ${{ inputs.path-to-file }}"
