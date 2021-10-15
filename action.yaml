@@ -24,7 +24,7 @@ outputs:
     description: 'HTTP link and deployment id used to see the status of your deployment'
 runs:
   using: 'docker'
-  image: 'docker://armory/armory-cli:0.4.6'
+  image: 'docker://armory/armory-cli:latest'
   env:
     ARMORY_CLIENTID: ${{ inputs.clientId }}
     ARMORY_CLIENTSECRET: ${{ inputs.clientSecret }}
