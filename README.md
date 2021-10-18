@@ -36,7 +36,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name Deployment
-        uses: armory/armorycli-@feat/docker
+        uses: armory/cli-deploy-action@main
         with:
         clientId: "${{ secrets.CLIENTID }}" # Encrypted client ID that you created in the Armory Cloud Console that has been encrypted with GitHub's encrypted secrets.
         clientSecret:  "${{ secrets.CLIENTSECRET }}" #Client secret that you created in the Armory Cloud Console that has been encrypted with GitHub's encrypted secrets.
