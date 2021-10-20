@@ -13,12 +13,19 @@ All this logic is defined in a deployment file that you create and store in GitH
 ## Prerequisites
 
 1. Review the full set of requirements for Borealis, see [System Requirements](https://docs.armory.io/borealis/borealis-requirements/).
-2. Register for Armory's hosted cloud services account. This user account is how you create credentials and access the Status UI. For more information about getting started with Borealis, see [Getting Started with Project Borealis](https://docs.armory.io/borealis/quick-start/).
-3. In the Cloud Console for Armory's hosted cloud services, create machine-to-machine client credentials for the Remote Network Agent (RNA).  
-4. Create service account credentials (link to service account credentials page).
-5. Encrypt the service account credentials so that you can use them securely in the action. For more information, see [Encrypted secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets.)
+2. Complete the [Get Started with Project Borealis](hhttps://docs.armory.io/borealis/quick-start/borealis-org-get-started/) tasks, which include the following:
+
+  - Register for an Armory Cloud services account.
+  - Create machine-to-machine client credentials for the Remote Network Agent (RNA), which is installed on your deployment target.
+  - Prepare your deployment target
+3. In the Cloud Console, create machine-to-machine client credentials to use for your GitHub Action service account. For more information, see [Integrate Borealis & Automate Deployments](https://docs.armory.io/borealis/quick-start/borealis-integrate/)
+4. Encrypt the GitHub Action service account credentials so that you can use them securely in the action. For more information, see [Encrypted secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets.)
 
 ## Configure the action
+
+> If you are new to using GitHub Actions, see [Quickstart for GitHub Actions](https://docs.github.com/en/actions/quickstart) for information about setting up GitHub Actions.
+ 
+Save the following YAML file to your `.github/workflows` directory:
 
 ```yaml
 name: <Descriptive Name>
