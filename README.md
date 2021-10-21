@@ -41,10 +41,10 @@ jobs:
     name: <Descriptive Name>
     runs-on: ubuntu-latest
     steps:
-      - name Checkout code
+      - name: Checkout code
         uses: actions/checkout@v2
 
-      - name Deployment
+      - name: Deployment
         uses: armory/cli-deploy-action@main
         with:
         clientId: "${{ secrets.CLIENTID }}" # Encrypted client ID that you created in the Armory Cloud Console that has been encrypted with GitHub's encrypted secrets.
