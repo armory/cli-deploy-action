@@ -20,7 +20,7 @@ All this logic is defined in a deployment file that you create and store in GitH
   - Prepare your deployment target by installing the RNA.
   
 3. In the Cloud Console, create machine-to-machine client credentials to use for your GitHub Action service account. For more information, see [Integrate Borealis & Automate Deployments](https://docs.armory.io/borealis/quick-start/borealis-integrate/).
-4. Encrypt the GitHub Action service account credentials so that you can use them securely in the action. For more information, see [Encrypted secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets.).
+4. Encrypt the GitHub Action service account credentials so that you can use them securely in the action. For more information, see [Encrypted secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets).
 
 ## Configure the action
 
