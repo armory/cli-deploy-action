@@ -47,9 +47,9 @@ jobs:
       - name: Deployment
         uses: armory/cli-deploy-action@main
         with:
-        clientId: "${{ secrets.CLIENTID }}" # Encrypted client ID that you created in the Armory Cloud Console that has been encrypted with GitHub's encrypted secrets.
-        clientSecret:  "${{ secrets.CLIENTSECRET }}" #Client secret that you created in the Armory Cloud Console that has been encrypted with GitHub's encrypted secrets.
-        path-to-file: "/path/to/deployment.yaml" # Path to the deployment file. For more information, see the Create a deployment file section.
+          clientId: "${{ secrets.CLIENTID }}" # Encrypted client ID that you created in the Armory Cloud Console that has been encrypted with GitHub's encrypted secrets.
+          clientSecret:  "${{ secrets.CLIENTSECRET }}" #Client secret that you created in the Armory Cloud Console that has been encrypted with GitHub's encrypted secrets.
+          path-to-file: "/path/to/deployment.yaml" # Path to the deployment file. For more information, see the Create a deployment file section.
 
 ```
 
