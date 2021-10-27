@@ -15,7 +15,7 @@ inputs:
     default: 'https://api.cloud.armory.io'
   tokenIssuerUrl:
     description: 'Armory Cloud authentication provider url'
-    default: 'https://auth.cloud.armory.io/oauth/token'
+    default: 'https://auth.cloud.armory.io/oauth'
   deployHostUrl:
     description: 'Location of the Armory Cloud API which will handle your deployment'
     default: 'api.cloud.armory.io'
