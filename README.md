@@ -41,7 +41,7 @@ Save the following YAML file to your `.github/workflows` directory:
 name: <Descriptive Name>
 
 on: 
-  <trigger> # What triggers a deployment. For example, `push`.
+  push: # What triggers a deployment. For example, `push`.
     branches:
       - <branchName> # What branch triggers a deployment. For example, `main`.
 
