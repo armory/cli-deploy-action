@@ -12,16 +12,25 @@ Borealis supports performing a canary deployment to deploy an app progressively 
 
 All this logic is defined in a deployment file that you create and store in GitHub.
 
+You can also learn about this GitHub action by viewing the [repo](https://github.com/armory/cli-deploy-action).
+
 ## Prerequisites
 
 1. Review the full set of requirements for Borealis at [System Requirements](https://docs.armory.io/borealis/borealis-requirements/).
 2. Complete the [Get Started with Project Borealis](hhttps://docs.armory.io/borealis/quick-start/borealis-org-get-started/) tasks, which include the following:
 
-  - Register for an Armory hosted cloud services account. This is the account that you use to log in to the Armory Cloud Console and the Status UI.
-  - Create machine-to-machine client credentials for the Remote Network Agent (RNA), which gets installed on your deployment target.
-  - Prepare your deployment target by installing the RNA.
+   - Register for an Armory hosted cloud services account. This is the account that you use to log in  to the Armory Cloud Console and the Status UI.
+   - Create machine-to-machine client credentials for the Remote Network Agent (RNA), which gets  installed on your deployment target.
+   - Prepare your deployment target by installing the RNA.
   
-3. In the Cloud Console, create machine-to-machine client credentials to use for your GitHub Action service account. For more information, see [Integrate Borealis & Automate Deployments](https://docs.armory.io/borealis/quick-start/borealis-integrate/).
+3. In the Cloud Console, create machine-to-machine client credentials to use for your GitHub Action service account. You can select the pre-configured scope group **Deployments using Spinnaker** or manually select the following:
+
+   - `manage:deploy`
+   - `read:infra:data`
+   - `exec:infra:op`
+   - `read:artifacts:data`
+
+   For more information, see [Integrate Borealis & Automate Deployments](https://docs.armory.io/borealis/quick-start/borealis-integrate/).
 4. Encrypt the GitHub Action service account credentials so that you can use them securely in the action. For more information, see [Encrypted secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets).
 
 ## Configure the action
@@ -34,7 +43,7 @@ Save the following YAML file to your `.github/workflows` directory:
 name: <Descriptive Name>
 
 on: 
-  <trigger> # What triggers a deployment. For example, `push`.
+  push: # What triggers a deployment. For example, `push`.
     branches:
       - <branchName> # What branch triggers a deployment. For example, `main`.
 
