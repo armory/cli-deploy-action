@@ -1,5 +1,7 @@
 # Armory Project Borealis Deployment Action
 
+> As part of participating in an early access program you will receive information from Armory that is not yet publicly available and is subject to your NDA or confidentiality obligations with Armory.
+
 ## Overview
 
 <!-- update the GHA readme or docs.armory.io page when making changes to one or the other -->
@@ -161,3 +163,5 @@ armory deploy status -i <deployment-ID>
 **Status UI**
 
 You need login credentials to access the Status UI, which is part of Armory's hosted cloud services. For the early access program, contact Armory for registration information.
+
+> This product documentation page is Armory confidential information.
