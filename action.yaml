@@ -19,6 +19,8 @@ inputs:
   deployHostUrl:
     description: 'Location of the Armory Cloud API which will handle your deployment'
     default: 'api.cloud.armory.io'
+  extraArgs:
+    description: 'extra args to the deployment start command'
 outputs:
   deployment-link:
     description: 'HTTP link and deployment id used to see the status of your deployment'
@@ -33,4 +35,4 @@ runs:
     ARMORY_DEPLOYHOSTURL: ${{ inputs.deployHostUrl }}
     ARMORY_DEPLOYORIGIN: 'github'
   args:
-    - "deploy start --file ${{ inputs.path-to-file }}"
+    - "deploy start ${{ extraArgs }} --file ${{ inputs.path-to-file }}"
