@@ -1,5 +1,6 @@
 name: 'armory/cli-deploy-action'
 description: 'Leverage the armory cli to deploy your apps'
+
 inputs:
   path-to-file:
     description: 'Path to the configuration YAML file used to configure your deployment'
@@ -25,9 +26,11 @@ inputs:
     description: 'Location of the Armory Cloud API which will handle your deployment'
     default: 'api.cloud.armory.io'
     required: false
+
 outputs:
   deployment-link:
     description: 'HTTP link and deployment id used to see the status of your deployment'
+
 runs:
   using: 'docker'
   image: 'Dockerfile'
