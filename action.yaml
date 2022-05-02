@@ -8,6 +8,9 @@ inputs:
   applicationName:
     description: 'extra args to the deployment start command'
     required: false
+  addContext:
+    description: 'extra context params to the deployment start command'
+    required: false
   clientId:
     description: 'ClientId for Armory Cloud'
     required: true
@@ -44,3 +47,4 @@ runs:
   args:
     - ${{ inputs.path-to-file }}
     - ${{ inputs.applicationName }}
+    - ${{ inputs.addContext }}
