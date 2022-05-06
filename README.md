@@ -61,6 +61,8 @@ jobs:
           clientId: "${{ secrets.CLIENTID }}" # Encrypted client ID that you created in the Armory Cloud Console that has been encrypted with GitHub's encrypted secrets.
           clientSecret:  "${{ secrets.CLIENTSECRET }}" #Client secret that you created in the Armory Cloud Console that has been encrypted with GitHub's encrypted secrets.
           path-to-file: "/path/to/deployment.yaml" # Path to the deployment file. For more information, see the Create a deployment file section.
+          applicationName: "app1" # Application name for deployment
+          addContext: "image=nginx,version=1.0" # Add context parameters to be used in the deployment steps in a key=value comma delimited list
 
 ```
 

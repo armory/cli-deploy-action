@@ -2,8 +2,13 @@
 
 EXTRA_ARGS=""
 if [ -n "${2}" ]; then
-   EXTRA_ARGS="--application=${2}"
+   EXTRA_ARGS=" --application=${2}"
 fi
 
-armory deploy start "${EXTRA_ARGS}" --file "${1}"
+if [ -n "${3}" ]; then
+   EXTRA_ARGS="${EXTRA_ARGS} --add-context=${3}"
+fi
+
+armory version
+armory deploy start ${EXTRA_ARGS} --file "${1}"
 
