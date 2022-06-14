@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+set -e
+
 EXTRA_ARGS=""
 if [ -n "${2}" ]; then
    EXTRA_ARGS=" --application=${2}"
