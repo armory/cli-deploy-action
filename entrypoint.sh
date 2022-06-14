@@ -1,4 +1,6 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
+
+set -e
 
 EXTRA_ARGS=""
 if [ -n "${2}" ]; then
