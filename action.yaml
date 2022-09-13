@@ -1,5 +1,5 @@
-name: 'armory/cli-deploy-action'
-description: 'Leverage the armory cli to deploy your apps'
+name: 'Armory Continuous Deployment-as-a-Service'
+description: 'CD-as-a-Service enables declarative continuous deployment, with a GitOps experience and advanced deployment strategies so developers can focus on building great code, not deploying it. '
 
 inputs:
   path-to-file:
