@@ -11,6 +11,7 @@ Focus on writing code, not deploying it. Don’t stress about the journey, just 
 
 
 # Pricing and Setup
+[Sign up for free](go.armory.io/signup)
 https://www.armory.io/pricing/ 
 * Experience hassle-free Continuous Deployment at no cost
   * Our free pricing option includes: 
