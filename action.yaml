@@ -1,5 +1,5 @@
 name: 'Armory Continuous Deployment-as-a-Service'
-description: 'CD-as-a-Service enables declarative continuous deployment, with a GitOps experience and advanced deployment strategies so developers can focus on building great code, not deploying it. '
+description: 'CD-as-a-Service enables declarative continuous deployment, with a GitOps experience and advanced deployment strategies. '
 
 inputs:
   path-to-file:
