@@ -1,4 +1,4 @@
-FROM armory/armory-cli:latest
+FROM armory/armory-cli:dev
 
 COPY ./entrypoint.sh /entrypoint.sh
 
