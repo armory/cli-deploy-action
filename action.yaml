@@ -29,10 +29,18 @@ inputs:
     description: 'Location of the Armory Cloud API which will handle your deployment'
     default: 'api.cloud.armory.io'
     required: false
+  waitForDeployment:
+    description: 'Boolean flag (true|false) determining if the action should wait for the deployment to complete. "false" by default.'
+    default: 'false'
+    required: false
 
 outputs:
-  deployment-link:
-    description: 'HTTP link and deployment id used to see the status of your deployment'
+  DEPLOYMENT_ID:
+    description: 'Unique deployment identifier - can be used to query the status of the deployment in cloud-console'
+  LINK:
+    description: 'Link to the cloud-console, where you can check the state of the workflow and advance it to the next stages'
+  RUN_RESULT:
+    description: "If deployment was triggered with 'waitForDeployment=true' flag, this variable will contain final status of the deployment - one of [SUCCEEDED, CANCELLED, FAILED, UNKNOWN (error)]"
 
 runs:
   using: 'docker'
@@ -48,3 +56,4 @@ runs:
     - ${{ inputs.path-to-file }}
     - ${{ inputs.applicationName }}
     - ${{ inputs.addContext }}
+    - ${{ inputs.waitForDeployment }}
