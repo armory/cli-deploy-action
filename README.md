@@ -13,7 +13,7 @@ Focus on writing code, not deploying it. Don’t stress about the journey, just 
 # Pricing and Setup
 [Sign up for free](https://www.armory.io/products/continuous-deployment-as-a-service/?utm_medium=marketplace&utm_source=github_marketplace)
 
-https://www.armory.io/pricing/?utm_medium=marketplace&utm_source=github_marketplace
+[Pricing](https://www.armory.io/pricing/?utm_medium=marketplace&utm_source=github_marketplace)
 * Experience hassle-free Continuous Deployment at no cost
   * Our free pricing option includes: 
     * Up to 25 Application Targets per Month (each copy of an app deployed to a namespace)
