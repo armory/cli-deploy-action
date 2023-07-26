@@ -60,5 +60,5 @@ runs:
   args:
     - ${{ inputs.path-to-file }}
     - ${{ inputs.applicationName }}
-    - ${{ env.githubContext }}
+    - env.githubContext
     - ${{ inputs.waitForDeployment }}
