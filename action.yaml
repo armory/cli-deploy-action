@@ -45,7 +45,6 @@ outputs:
   RUN_RESULT:
     description: "If deployment was triggered with 'waitForDeployment=true' flag, this variable will contain final status of the deployment - one of [SUCCEEDED, CANCELLED, FAILED, UNKNOWN (error)]"
 
-
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -59,5 +58,5 @@ runs:
   args:
     - ${{ inputs.path-to-file }}
     - ${{ inputs.applicationName }}
-    - ${{ ARMORY_DEPLOYORIGIN }}
+    - ${{ env.ARMORY_DEPLOYORIGIN }}
     - ${{ inputs.waitForDeployment }}
