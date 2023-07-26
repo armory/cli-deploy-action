@@ -2,7 +2,7 @@ name: 'Armory Continuous Deployment-as-a-Service'
 description: 'CD-as-a-Service enables declarative continuous deployment, with a GitOps experience and advanced deployment strategies. '
 
 env:
-   pr_lineage: 'repository=${{ github.repository }},actor=${{ github.actor }},ref=${{ github.ref }},ref_name=${{ github.ref_name }},ref_type=${{ github.ref_type }},event=${{ github.event_name }},repositoryUrl=${{ github.repositoryUrl }},run_id=${{ github.run_id }},sha=${{ github.sha }}'
+  pr_lineage: 'repository=${{ github.repository }},actor=${{ github.actor }},ref=${{ github.ref }},ref_name=${{ github.ref_name }},ref_type=${{ github.ref_type }},event=${{ github.event_name }},repositoryUrl=${{ github.repositoryUrl }},run_id=${{ github.run_id }},sha=${{ github.sha }}'
 
 inputs:
   path-to-file:
@@ -59,5 +59,5 @@ runs:
   args:
     - ${{ inputs.path-to-file }}
     - ${{ inputs.applicationName }}
-    - '$pr_lineage'
+    - ${{ pr_lineage }}
     - ${{ inputs.waitForDeployment }}
