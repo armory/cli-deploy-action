@@ -58,5 +58,5 @@ runs:
   args:
     - ${{ inputs.path-to-file }}
     - ${{ inputs.applicationName }}
-    - ${{ env.ARMORY_DEPLOYORIGIN }}
+    - $ARMORY_DEPLOYORIGIN
     - ${{ inputs.waitForDeployment }}
