@@ -33,8 +33,7 @@ inputs:
     description: 'Boolean flag (true|false) determining if the action should wait for the deployment to complete. "false" by default.'
     default: 'false'
     required: false
-  githubContext: 
-    default: 'repository=${{ github.repository }},actor=${{ github.actor }},ref=${{ github.ref }},ref_name=${{ github.ref_name }},ref_type=${{ github.ref_type }},event=${{ github.event_name }},repositoryUrl=${{ github.repositoryUrl }},run_id=${{ github.run_id }},sha=${{ github.sha }}'
+  githubContext: 'repository=${{ github.repository }},actor=${{ github.actor }},ref=${{ github.ref }},ref_name=${{ github.ref_name }},ref_type=${{ github.ref_type }},event=${{ github.event_name }},repositoryUrl=${{ github.repositoryUrl }},run_id=${{ github.run_id }},sha=${{ github.sha }}'
 
 outputs:
   DEPLOYMENT_ID:
