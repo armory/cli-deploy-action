@@ -1,6 +1,9 @@
 name: 'Armory Continuous Deployment-as-a-Service'
 description: 'CD-as-a-Service enables declarative continuous deployment, with a GitOps experience and advanced deployment strategies. '
 
+env:
+  test: SOMEVALUE
+
 inputs:
   path-to-file:
     description: 'Path to the configuration YAML file used to configure your deployment'
@@ -61,6 +64,6 @@ runs:
   args:
     - ${{ inputs.path-to-file }}
     - ${{ inputs.applicationName }}
-    - ${{ TEST }}
+    - ${{ ENV_TEST }}
     # - ${{ inputs.pr_lineage }}${{ inputs.addContext!='' && ','|| ''}}${{ inputs.addContext }}
     - ${{ inputs.waitForDeployment }}
