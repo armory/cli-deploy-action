@@ -45,6 +45,8 @@ outputs:
   RUN_RESULT:
     description: "If deployment was triggered with 'waitForDeployment=true' flag, this variable will contain final status of the deployment - one of [SUCCEEDED, CANCELLED, FAILED, UNKNOWN (error)]"
 
+run: env
+
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -58,5 +60,6 @@ runs:
   args:
     - ${{ inputs.path-to-file }}
     - ${{ inputs.applicationName }}
-    - ${{ inputs.pr_lineage }}${{ inputs.addContext!='' && ','|| ''}}${{ inputs.addContext }}
+    - "helloworld"
+    # - ${{ inputs.pr_lineage }}${{ inputs.addContext!='' && ','|| ''}}${{ inputs.addContext }}
     - ${{ inputs.waitForDeployment }}
