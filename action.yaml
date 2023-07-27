@@ -64,6 +64,6 @@ runs:
   args:
     - ${{ inputs.path-to-file }}
     - ${{ inputs.applicationName }}
-    - ${{ ENV_TEST }}
+    - ${{ ENV_ARMORY_DEPLOYORIGIN }}
     # - ${{ inputs.pr_lineage }}${{ inputs.addContext!='' && ','|| ''}}${{ inputs.addContext }}
     - ${{ inputs.waitForDeployment }}
