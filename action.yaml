@@ -51,22 +51,16 @@ outputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  run: env
-
-# runs:
-#   # TEST="SOMEVALUE"
-#   using: 'docker'
-#   image: 'Dockerfile'
-#   env:
-#     ARMORY_CLIENTID: ${{ inputs.clientId }}
-#     ARMORY_CLIENTSECRET: ${{ inputs.clientSecret }}
-#     ARMORY_AUDIENCE: ${{ inputs.audience }}
-#     ARMORY_TOKENISSUERURL: ${{ inputs.tokenIssuerUrl }}
-#     ARMORY_DEPLOYHOSTURL: ${{ inputs.deployHostUrl }}
-#     ARMORY_DEPLOYORIGIN: 'github'
-#   args:
-#     - ${{ inputs.path-to-file }}
-#     - ${{ inputs.applicationName }}
-#     - ${{ ENV_ARMORY_DEPLOYORIGIN }}
-#     # - ${{ inputs.pr_lineage }}${{ inputs.addContext!='' && ','|| ''}}${{ inputs.addContext }}
-#     - ${{ inputs.waitForDeployment }}
+  env:
+    ARMORY_CLIENTID: ${{ inputs.clientId }}
+    ARMORY_CLIENTSECRET: ${{ inputs.clientSecret }}
+    ARMORY_AUDIENCE: ${{ inputs.audience }}
+    ARMORY_TOKENISSUERURL: ${{ inputs.tokenIssuerUrl }}
+    ARMORY_DEPLOYHOSTURL: ${{ inputs.deployHostUrl }}
+    ARMORY_DEPLOYORIGIN: 'github'
+  args:
+    - ${{ inputs.path-to-file }}
+    - ${{ inputs.applicationName }}
+    - $test
+    # - ${{ inputs.pr_lineage }}${{ inputs.addContext!='' && ','|| ''}}${{ inputs.addContext }}
+    - ${{ inputs.waitForDeployment }}
