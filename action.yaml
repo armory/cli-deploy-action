@@ -61,6 +61,6 @@ runs:
   args:
     - ${{ inputs.path-to-file }}
     - ${{ inputs.applicationName }}
-    - $test
+    - "$test"
     # - ${{ inputs.pr_lineage }}${{ inputs.addContext!='' && ','|| ''}}${{ inputs.addContext }}
     - ${{ inputs.waitForDeployment }}
