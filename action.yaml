@@ -48,6 +48,7 @@ outputs:
 run: env
 
 runs:
+  TEST="SOMEVALUE"
   using: 'docker'
   image: 'Dockerfile'
   env:
@@ -60,6 +61,6 @@ runs:
   args:
     - ${{ inputs.path-to-file }}
     - ${{ inputs.applicationName }}
-    - ${{ env.ARMORY_DEPLOYORIGIN }}
+    - ${{ TEST }}
     # - ${{ inputs.pr_lineage }}${{ inputs.addContext!='' && ','|| ''}}${{ inputs.addContext }}
     - ${{ inputs.waitForDeployment }}
