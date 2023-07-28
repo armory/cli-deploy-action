@@ -61,6 +61,10 @@ runs:
   args:
     - plaintext
     - env.NAME
+    - $env.NAME
+    - $NAME
+    - '$NAME'
+    - '$env.NAME'
     - ${{env.NAME}}
     - ${{NAME}}
     - ${{ENV_NAME}}
