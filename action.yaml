@@ -1,9 +1,6 @@
 name: 'Armory Continuous Deployment-as-a-Service'
 description: 'CD-as-a-Service enables declarative continuous deployment, with a GitOps experience and advanced deployment strategies. '
 
-env:
-  test: SOMEVALUE
-
 inputs:
   path-to-file:
     description: 'Path to the configuration YAML file used to configure your deployment'
@@ -48,19 +45,30 @@ outputs:
   RUN_RESULT:
     description: "If deployment was triggered with 'waitForDeployment=true' flag, this variable will contain final status of the deployment - one of [SUCCEEDED, CANCELLED, FAILED, UNKNOWN (error)]"
 
-runs:
-  using: 'docker'
-  image: 'Dockerfile'
-  env:
-    ARMORY_CLIENTID: ${{ inputs.clientId }}
-    ARMORY_CLIENTSECRET: ${{ inputs.clientSecret }}
-    ARMORY_AUDIENCE: ${{ inputs.audience }}
-    ARMORY_TOKENISSUERURL: ${{ inputs.tokenIssuerUrl }}
-    ARMORY_DEPLOYHOSTURL: ${{ inputs.deployHostUrl }}
-    ARMORY_DEPLOYORIGIN: 'github'
-  args:
-    - ${{ inputs.path-to-file }}
-    - ${{ inputs.applicationName }}
-    - ${{ ENV_TEST }}
-    # - ${{ inputs.pr_lineage }}${{ inputs.addContext!='' && ','|| ''}}${{ inputs.addContext }}
-    - ${{ inputs.waitForDeployment }}
+env:
+  NAME: waldo
+
+jobs:
+  Explore:
+    runs-on: ubuntu-latest
+    steps:
+      - run: env
+      - name: Print name
+        run: echo "Hello $NAME"
+
+# runs:
+#   using: 'docker'
+#   image: 'Dockerfile'
+#   env:
+#     ARMORY_CLIENTID: ${{ inputs.clientId }}
+#     ARMORY_CLIENTSECRET: ${{ inputs.clientSecret }}
+#     ARMORY_AUDIENCE: ${{ inputs.audience }}
+#     ARMORY_TOKENISSUERURL: ${{ inputs.tokenIssuerUrl }}
+#     ARMORY_DEPLOYHOSTURL: ${{ inputs.deployHostUrl }}
+#     ARMORY_DEPLOYORIGIN: 'github'
+#   args:
+#     - ${{ inputs.path-to-file }}
+#     - ${{ inputs.applicationName }}
+#     - ${{ ENV_TEST }}
+#     # - ${{ inputs.pr_lineage }}${{ inputs.addContext!='' && ','|| ''}}${{ inputs.addContext }}
+#     - ${{ inputs.waitForDeployment }}
