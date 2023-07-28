@@ -4,6 +4,8 @@ description: 'CD-as-a-Service enables declarative continuous deployment, with a 
 env:
   NAME: waldo
 
+NAME2: waldo2
+
 inputs:
   path-to-file:
     description: 'Path to the configuration YAML file used to configure your deployment'
@@ -68,6 +70,7 @@ runs:
     - ${{env.NAME}}
     - ${{NAME}}
     - ${{ENV_NAME}}
+    - ${{ NAME2 }}
 
     # - ${{ inputs.path-to-file }}
     # - ${{ inputs.applicationName }}
