@@ -16,5 +16,5 @@ if [ "${4,,}" = "true" ]; then
 fi
 
 armory version
-armory deploy start ${EXTRA_ARGS} --file "${1}"
+armory deploy start ${EXTRA_ARGS} --file "${1}" --with-scm
 
