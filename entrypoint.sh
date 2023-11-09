@@ -11,8 +11,11 @@ if [ -n "${3}" ]; then
    EXTRA_ARGS="${EXTRA_ARGS} --add-context=${3}"
 fi
 
-if [ -n "${4}" ]; then
+if [ -n "${4}" ]
+then
    EXTRA_ARGS="${EXTRA_ARGS} --with-scm-file=${4}"
+else
+   EXTRA_ARGS="${EXTRA_ARGS} --with-scm"
 fi
 
 if [ "${5,,}" = "true" ]; then
