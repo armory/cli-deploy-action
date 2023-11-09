@@ -33,6 +33,9 @@ inputs:
     description: 'Boolean flag (true|false) determining if the action should wait for the deployment to complete. "false" by default.'
     default: 'false'
     required: false
+  withSCMFile:
+    description: 'Path to the YAML file containing the SCM values associated with the deployment'
+    required: false
 
 outputs:
   DEPLOYMENT_ID:
