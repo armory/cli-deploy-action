@@ -11,6 +11,9 @@ inputs:
   addContext:
     description: 'extra context params to the deployment start command'
     required: false
+  withScmFile:
+    description: 'Path to the YAML file containing the SCM values associated with the deployment'
+    required: false
   clientId:
     description: 'ClientId for Armory Cloud'
     required: true
@@ -56,4 +59,5 @@ runs:
     - ${{ inputs.path-to-file }}
     - ${{ inputs.applicationName }}
     - ${{ inputs.addContext }}
+    - ${{ inputs.withScmFile }}
     - ${{ inputs.waitForDeployment }}
