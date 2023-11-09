@@ -11,6 +11,9 @@ inputs:
   addContext:
     description: 'extra context params to the deployment start command'
     required: false
+  withSCMFile:
+    description: 'Path to the YAML file containing the SCM values associated with the deployment'
+    required: false
   clientId:
     description: 'ClientId for Armory Cloud'
     required: true
@@ -32,9 +35,6 @@ inputs:
   waitForDeployment:
     description: 'Boolean flag (true|false) determining if the action should wait for the deployment to complete. "false" by default.'
     default: 'false'
-    required: false
-  withSCMFile:
-    description: 'Path to the YAML file containing the SCM values associated with the deployment'
     required: false
 
 outputs:
